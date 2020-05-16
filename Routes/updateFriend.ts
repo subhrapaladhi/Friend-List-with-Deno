@@ -12,7 +12,7 @@ export const updateFriend:any = async(context: any) => {
         data["pno"] = body.value.pno;
     }
     
-    const result = await Friend.updateOne({_id: {"$oid": id}}, {$set: {email: "subhrapaladhi"}});
+    const result = await Friend.updateOne({_id: {"$oid": id}}, {$set: data});
     console.log(result);
     context.response.body = result;
     context.response.status = 200;
