@@ -12,7 +12,9 @@ export const deleteFriend: any = async(context: any) => {
         context.response.status = 200;
     }
 
-    catch(e){
-
+    catch(e) {
+        context.response.body = null;
+        context.response.status = 500
+        console.log(e);
     }
 }

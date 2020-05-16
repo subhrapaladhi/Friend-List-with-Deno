@@ -8,10 +8,14 @@ export const getFriend: any = async(context: any)=> {
         if(data){
             context.response.body = data;
             context.response.status = 200;    
+        } else {
+            context.response.body = "not found";
+            context.response.status = 204; 
         }
-        
     }
-    catch(e){
-
+    catch(e) {
+        context.response.body = null;
+        context.response.status = 500
+        console.log(e);
     }
 }
